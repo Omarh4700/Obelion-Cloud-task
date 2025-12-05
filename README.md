@@ -419,6 +419,16 @@ Laravel welcome page confirming the backend application is properly configured a
 - **Solution**: Verify environment variables are correctly set in `.env`
 - **Solution**: Check Security Group allows MySQL traffic from Backend to Database
 
+**Issue**: Backend shows Apache default page instead of Laravel application
+- **Solution**: This is automatically fixed in the `backend-script.sh` user_data script
+- **Solution**: The script configures Apache DocumentRoot to `/home/ubuntu/app/public`
+- **Solution**: If manually deployed, update `/etc/apache2/sites-available/000-default.conf`:
+  ```bash
+  sudo sed -i 's|DocumentRoot /var/www/html|DocumentRoot /home/ubuntu/app/public|g' /etc/apache2/sites-available/000-default.conf
+  sudo systemctl restart apache2
+  ```
+- **Solution**: Ensure mod_rewrite is enabled: `sudo a2enmod rewrite && sudo systemctl restart apache2`
+
 **Issue**: CI/CD deployment fails
 - **Solution**: Verify GitHub Secrets are configured correctly
 - **Solution**: Check SSH key has correct permissions (600)
