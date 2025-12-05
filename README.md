@@ -138,6 +138,8 @@ Obelion-Cloud-task/
 │       ├── .env.example             # Environment template
 │       └── .github/workflows/
 │           └── deploy.yml           # Backend CI/CD pipeline
+├── task-group-c-azure-migration/    # Optional: Azure migration plan
+│   └── README.md                    # Detailed AWS to Azure migration strategy
 └── screenshots/                     # Deployment verification images
 ```
 
@@ -399,6 +401,11 @@ Configuration screen for adding a new HTTP monitor pointing to the Laravel backe
 ![Monitor Up Status](screenshots/04_monitor_up.png)
 
 Successful monitoring showing the Laravel backend is up with 100% uptime and response time metrics.
+
+### 5. Laravel Backend Application
+![Laravel Backend](screenshots/06_laravel_backend.png)
+
+Laravel welcome page confirming the backend application is properly configured and accessible at the backend public IP.
 
 ## Troubleshooting
 
