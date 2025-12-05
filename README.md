@@ -44,10 +44,10 @@ graph TB
         end
     end
     
-    User -->|HTTPS/HTTP:80| IGW
+    
+    User -->|HTTP:80| IGW
     IGW --> Frontend
-    IGW --> Backend
-    Backend -->|HTTP:80| Frontend
+    Frontend -->|HTTP:80| Backend
     Backend -->|MySQL:3306| RDS
     
     style Frontend fill:#FF7771
