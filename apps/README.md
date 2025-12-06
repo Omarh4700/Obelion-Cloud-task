@@ -1,0 +1,2 @@
+- **Frontend Application**: https://github.com/Omarh4700/uptime-kuma
+- **Backend Application**: https://github.com/Omarh4700/laravel
